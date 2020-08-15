@@ -1,0 +1,7 @@
+/* components/icon-self/icon-self.wxss */
+/* .icon-self-container{
+    float: left;
+} */
+.icon-self-container{
+    display: inline;
+}

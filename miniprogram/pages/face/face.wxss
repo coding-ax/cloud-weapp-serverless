@@ -1,0 +1,52 @@
+/* pages/face/face.wxss */
+.face-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.face-head{
+    display: flex;
+    flex-direction: column;
+}
+.choose-list{
+    color: #fff;
+    background-color: #0984e3;
+    width: 50%;
+    margin: 15rpx;
+    padding: 20rpx;
+    font-size: 40rpx;
+    font-weight: 800;
+    border-radius: 14rpx;
+}
+/* 上部题库选择 */
+.face-head-item{
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 15rpx;
+    margin: 20rpx;
+    justify-content: space-between;
+    padding: 20rpx;
+    align-items: center;
+}
+.face-head-item view{
+    display: flex;
+    flex-direction: row;
+}
+.face-head-item text{
+    font-weight: 600;
+}
+.choose-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.choose-info view{
+    font-size: 25rpx;
+    background-color:#fd79a8;
+    color: #fff;
+    padding: 10rpx;
+    margin-right: 10rpx;
+    border-radius: 10rpx;
+}
+/* 已选择面试题预览 */

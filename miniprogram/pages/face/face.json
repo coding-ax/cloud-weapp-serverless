@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "icon-self":"../../components/icon-self/icon-self"
+  }
+}

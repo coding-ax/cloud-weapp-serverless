@@ -1,0 +1,147 @@
+/* pages/home/home.wxss */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+  } 
+/* 搜题栏按钮 */
+.search-box{
+    /* 使用黏性布局 */
+    position: sticky;
+    top: 0rpx;
+    padding:10rpx 0rpx 10rpx 0rpx;
+    /* 设置背景防止粘性由于padding失效 */
+    background-color: #f5f5f5;
+    width: 100%;
+    z-index: 1;
+}
+/* 设置对应宽度 */
+.search-view{
+    width: 100%;
+}
+.search-view button{
+    background-color: #ffffff;
+    width: 90%;
+    border-radius: 40rpx;
+    /* 控制对齐显示 */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #707070;
+    font-size: 30rpx;
+    font-weight: normal;
+}
+
+/* 进度控制栏目 */
+.progress-box{
+    margin: 15rpx 10rpx 10rpx 15rpx;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    width:85vw;
+    padding:40rpx 20rpx 40rpx 20rpx;
+    border-radius: 15rpx;
+}
+/* 已完成与剩余 */
+.progress-show{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+}
+.progress-show-item{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.progress-show-item-title{
+    font-size: 30rpx;
+    font-family: YouYuan;
+}
+.progress-show-item-number{
+    font-size: 60rpx;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: STHeiti Light [STXihei], YouYuan;
+    font-weight: bolder;
+}
+/* 当前与进度控制 */
+.current-plan{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50rpx 20rpx;
+    border-bottom: 2rpx solid #f5f5f5;
+}
+.current-plan-item{
+    flex: 1;
+    display:flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+}
+.current-plan-item text{
+    font-size: 40rpx;
+    margin-left: 10rpx;
+}
+.current-plan button{
+    font-size: 25rpx;
+}
+
+.continue-button{
+    width: 100%;
+}
+/* 继续学习按钮 */
+.continue-button button{
+    color: #fff;
+    background: linear-gradient(to right bottom,#a29bfe, #0984e3); 
+    margin-top: 30rpx;
+    width: 70%;
+}
+/* 进度条控制 */
+.progress-box-progress{
+    width: 80%;
+    margin: 40rpx 15rpx;
+}
+.progress-box progress{
+    width: 100%;
+}
+
+/* 题库 */
+.tiku-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30rpx;
+    font-size: 40rpx;
+    width: 80%;
+}
+.tiku-box-title{
+    background-color: #a29bfe;
+    color: #fff;
+    font-weight: 700;
+    width: 50%;
+    text-align: center;
+    border-radius: 5rpx;
+}
+.tiku-list{
+    margin-top: 13rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+}
+.tiku-list-item{
+    margin:10rpx;
+}
+.tiku-list image{
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 20rpx;
+}

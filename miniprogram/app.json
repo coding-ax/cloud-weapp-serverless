@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/face/face",
+    "pages/mine/mine",
+    "pages/home/home"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fd79a8",
+    "navigationBarTitleText": "计算机小助手",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#fd79a8",
+    "borderStyle": "white",
+    "backgroundColor": "#f5f5f5",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "选择题",
+        "iconPath": "./images/icons/home.png",
+        "selectedIconPath": "./images/icons/home_active.png"
+      },
+      {
+        "pagePath": "pages/face/face",
+        "text": "问答题",
+        "iconPath": "./images/icons/face.png",
+        "selectedIconPath": "./images/icons/face_active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./images/icons/profile.png",
+        "selectedIconPath": "./images/icons/profile_active.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+<!--components/icon-self/icon-self.wxml-->
+<view class="icon-self-container">
+    <image src="{{src}}" style="width:{{size+'rpx'}}" mode="widthFix" ></image>
+</view>

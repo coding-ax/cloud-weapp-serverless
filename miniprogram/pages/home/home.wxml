@@ -1,0 +1,74 @@
+<!--pages/home/home.wxml-->
+<view class="home-container">
+    <!-- 搜索栏 -->
+    <view class="search-box">
+        <view class="search-view">
+            <!-- 主按钮 点击显示遮盖 -->
+            <button> <icon type="search"></icon>搜题</button>
+        </view>
+    </view>
+    <!-- 进度控制栏 -->
+    <view class="progress-box">
+        <!-- 进度文字显示 -->
+        <view class="progress-show">
+            <view class="progress-show-item">
+                <view class="progress-show-item-title">
+                <icon type="success" size="15"></icon><text>已完成</text>
+                </view>
+                <view class="progress-show-item-number">100</view>
+            </view>
+             <view class="progress-show-item">
+                <view class="progress-show-item-title">
+                <icon type="info" size="15"></icon><text>剩余</text>
+                </view>
+                <view class="progress-show-item-number">100</view>
+            </view>
+        </view>
+        <!-- 当前计划 -->
+        <view class="current-plan">
+            <view class="current-plan-item">
+                <icon-self src="../../images/icons/current-item.png" size="40" /><text>web前端</text>
+            </view>
+            <button size="mini" type="primary">
+                <!-- <icon-self src="../../images/icons/bianji.png" /> -->
+                <text>修改计划</text>
+            </button>
+        </view>
+        <!-- 进度条 -->
+        <view class="progress-box-progress">
+            <view class="progress-box-title">当前进度100/200</view>
+            <progress percent="60" border-radius="3"  color="#fd79a8"  active stroke-width="6" />
+        </view>
+    </view>
+    <!-- 继续学习按钮 -->
+    <view class="continue-button">
+        <button >继续学习</button>
+    </view>
+    <!-- 显示题库 -->
+    <view class="tiku-box">
+        <view class="tiku-box-title">
+            当前可选题库：
+        </view>
+        <view>
+        <view class="tiku-list">
+            <view class="tiku-list-item">
+                <image src="../../images/icons/C++.png"></image>
+                <view class="tiku-list-title">C++</view>
+            </view>
+            <view class="tiku-list-item">
+                <image src="../../images/icons/java.png"></image>
+                <view class="tiku-list-title">Java后端</view>
+            </view>
+            <view class="tiku-list-item">
+                <image src="../../images/icons/js.png"></image>
+                <view class="tiku-list-title">web前端</view>
+            </view>
+            <view class="tiku-list-item">
+                <image src="../../images/icons/python.png"></image>
+                <view class="tiku-list-title">python</view>
+            </view>
+        </view>
+        </view>
+        
+    </view>
+</view>
