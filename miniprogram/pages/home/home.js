@@ -1,18 +1,27 @@
 // pages/home/home.js
+// 初始化数据库操作
+const db = wx.cloud.database();
+const _ = db.command;
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        current:[],
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-
+    onLoad:async function (options) {
+        let res = await db.collection("choose").get();
+        this.setData({
+            current:res.data
+        },()=>{
+            console.log(this.data.current)
+        })
+        
     },
 
     /**

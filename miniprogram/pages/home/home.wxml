@@ -51,22 +51,12 @@
         </view>
         <view>
         <view class="tiku-list">
-            <view class="tiku-list-item">
-                <image src="../../images/icons/C++.png"></image>
-                <view class="tiku-list-title">C++</view>
+            <view class="tiku-list-item" wx:for="{{current}}" wx:key="{{item._id}}">
+                <image src="{{item.pic}}"></image>
+                <view class="tiku-list-title">{{item.name}}</view>
             </view>
-            <view class="tiku-list-item">
-                <image src="../../images/icons/java.png"></image>
-                <view class="tiku-list-title">Java后端</view>
-            </view>
-            <view class="tiku-list-item">
-                <image src="../../images/icons/js.png"></image>
-                <view class="tiku-list-title">web前端</view>
-            </view>
-            <view class="tiku-list-item">
-                <image src="../../images/icons/python.png"></image>
-                <view class="tiku-list-title">python</view>
-            </view>
+          
+            
         </view>
         </view>
         

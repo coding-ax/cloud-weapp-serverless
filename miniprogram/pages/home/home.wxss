@@ -141,7 +141,7 @@
     margin:10rpx;
 }
 .tiku-list image{
-    width: 180rpx;
-    height: 180rpx;
+    width: 170rpx;
+    height: 170rpx;
     border-radius: 20rpx;
 }
