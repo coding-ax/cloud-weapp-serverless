@@ -1,0 +1,21 @@
+<!--pages/search/search.wxml-->
+<view class="search-container">
+	<!-- 搜索的输入栏目 -->
+	<view class="search-input">
+		<view class="search-hold">
+			<view class="search-icon">
+				<icon type="search"></icon>
+			</view>
+			<view class="search-box">
+				<input type="text" confirm-type="search"></input>
+			</view>
+            <view class="search-button">
+				<button type="primary" size="mini">搜索</button>
+			</view>
+		</view>
+	</view>
+	<!-- 显示搜索结果（以题目简略显示模式） -->
+	<view class="search-res">
+
+	</view>
+</view>

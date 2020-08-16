@@ -1,37 +1,17 @@
-// pages/home/home.js
-// 初始化数据库操作
-const db = wx.cloud.database();
-const _ = db.command;
+// pages/search/search.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        current: [],
+
     },
 
-    navGo: (event) => {
-        console.log(event)
-        wx.navigateTo({
-            url: event.currentTarget.dataset.route,
-        })
-    },
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: async function (options) {
-        wx.showLoading({
-          title: '加载中',
-        })
-        let res = await db.collection("choose").get();
-        this.setData({
-            current: res.data
-        }, () => {
-            wx.hideLoading({
-              complete: (res) => {},
-            })
-        })
+    onLoad: function (options) {
 
     },
 
