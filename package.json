@@ -1,0 +1,20 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "一个收录互联网行业开发岗方向题目的找工作小助手",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WHUT-XGP/cloud-weapp-serverless.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WHUT-XGP/cloud-weapp-serverless/issues"
+  },
+  "homepage": "https://github.com/WHUT-XGP/cloud-weapp-serverless#readme",
+  "dependencies": {}
+}

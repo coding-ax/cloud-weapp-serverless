@@ -1,17 +1,17 @@
 <!--pages/mine/mine.wxml-->
 <view class="home-container">
     <!-- 登录后才同步数据，否则就只有本地 -->
-    <view class="home-login" style="display:none">
-        <button open-type="getUserInfo" type="primary">点我授权登录</button>
+    <view class="home-login" wx:if="{{!isLogin}}">
+        <button open-type="getUserInfo" type="primary" bindgetuserinfo="getUserInfo">点我授权登录</button>
         <view class="info-box">
             <icon type="info"></icon>
             <view>登陆后可以同步学习进度到云端哦~</view>
         </view>
     </view>
     <!-- 已经登录 -->
-    <view class="home-logined">
-        <view>nickname</view>
-        <image src="../../images/icons/C++.png" />
+    <view class="home-logined" wx:else >
+        <view>{{nickname}}</view>
+        <image src="{{avatar}}" />
     </view>
     <!-- 共享菜单界面 -->
     <view class="home-menu">

@@ -1,39 +1,18 @@
-// pages/mine/mine.js
+// pages/topic/topic.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        isLogin: false,
-        avatar: "",
-        nickname: ""
+
     },
-    getUserInfo(e){
-        // 设置授权信息
-        this.setData({
-            avatar:e.detail.userInfo.avatarUrl,
-            nickname:e.detail.userInfo.nickName,
-            isLogin:true
-        });
-    },
+
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: async function (options) {
-        // 登录态判断
-        wx.getUserInfo({
-          complete: (res) => {
-              console.log(res);
-              if(res.userInfo!=undefined){
-                this.setData({
-                    avatar:res.userInfo.avatarUrl,
-                    nickname:res.userInfo.nickName,
-                    isLogin:true
-                });
-              }
-          },
-        })
+    onLoad: function (options) {
+
     },
 
     /**

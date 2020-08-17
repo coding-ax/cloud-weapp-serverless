@@ -1,65 +1,67 @@
 <!--pages/home/home.wxml-->
 <view class="home-container">
-    <!-- 搜索栏 -->
-    <view class="search-box">
-        <!-- 点击跳转搜索界面 -->
-        <view class="search-view" data-route="/pages/search/search" bindtap="navGo">
-            <!-- 主按钮 点击显示遮盖 -->
-            <button> <icon type="search"></icon>搜题</button>
-        </view>
-    </view>
-    <!-- 进度控制栏 -->
-    <view class="progress-box">
-        <!-- 进度文字显示 -->
-        <view class="progress-show">
-            <view class="progress-show-item">
-                <view class="progress-show-item-title">
-                <icon type="success" size="15"></icon><text>已完成</text>
-                </view>
-                <view class="progress-show-item-number">100</view>
-            </view>
-             <view class="progress-show-item">
-                <view class="progress-show-item-title">
-                <icon type="info" size="15"></icon><text>剩余</text>
-                </view>
-                <view class="progress-show-item-number">100</view>
-            </view>
-        </view>
-        <!-- 当前计划 -->
-        <view class="current-plan">
-            <view class="current-plan-item">
-                <icon-self src="../../images/icons/current-item.png" size="40" /><text>web前端</text>
-            </view>
-            <button size="mini" type="primary">
-                <!-- <icon-self src="../../images/icons/bianji.png" /> -->
-                <text>修改计划</text>
-            </button>
-        </view>
-        <!-- 进度条 -->
-        <view class="progress-box-progress">
-            <view class="progress-box-title">当前进度100/200</view>
-            <progress percent="60" border-radius="3"  color="#fd79a8"  active stroke-width="6" />
-        </view>
-    </view>
-    <!-- 继续学习按钮 -->
-    <view class="continue-button">
-        <button >继续学习</button>
-    </view>
-    <!-- 显示题库 -->
-    <view class="tiku-box">
-        <view class="tiku-box-title">
-            当前可选题库：
-        </view>
-        <view>
-        <view class="tiku-list">
-            <view class="tiku-list-item" wx:for="{{current}}" wx:key="{{item._id}}">
-                <image src="{{item.pic}}"></image>
-                <view class="tiku-list-title">{{item.name}}</view>
-            </view>
-          
-            
-        </view>
-        </view>
-        
-    </view>
+	<!-- 搜索栏 -->
+	<view class="search-box">
+		<!-- 点击跳转搜索界面 -->
+		<view class="search-view" data-route="/pages/search/search" bindtap="navGo">
+			<!-- 主按钮 点击显示遮盖 -->
+			<button>
+				<icon type="search"></icon>搜题
+			</button>
+		</view>
+	</view>
+	<!-- 进度控制栏 -->
+	<view class="progress-box">
+		<!-- 进度文字显示 -->
+		<view class="progress-show">
+			<view class="progress-show-item">
+				<view class="progress-show-item-title">
+					<icon type="success" size="15"></icon><text>已完成</text>
+				</view>
+				<view class="progress-show-item-number">{{progress.finished}}</view>
+			</view>
+			<view class="progress-show-item">
+				<view class="progress-show-item-title">
+					<icon type="info" size="15"></icon><text>剩余</text>
+				</view>
+				<view class="progress-show-item-number">{{progress.lasted}}</view>
+			</view>
+		</view>
+		<!-- 当前计划 -->
+		<view class="current-plan">
+			<view class="current-plan-item">
+				<icon-self src="../../images/icons/current-item.png" size="40" /><text>{{progress.currentItem||"暂无计划"}}</text>
+			</view>
+			<button size="mini" type="primary" data-route="/pages/choose/choose" bindtap="navGo">
+				<text>修改计划</text>
+			</button>
+		</view>
+		<!-- 进度条 -->
+		<view class="progress-box-progress">
+			<view class="progress-box-title">当前进度{{progress.finished}}/{{progress.finished+progress.lasted}}</view>
+			<progress percent="{{progress.currentPercent}}" border-radius="3" color="#fd79a8" active stroke-width="6" />
+		</view>
+	</view>
+	<!-- 继续学习按钮 -->
+	<view class="continue-button">
+		<button>继续学习</button>
+	</view>
+	<!-- 显示题库 -->
+	<view class="tiku-box">
+		<view class="tiku-box-title">
+			当前可选题库：
+		</view>
+		<view>
+			<view class="tiku-list">
+				<view class="tiku-list-item" wx:for="{{current}}" wx:key="_id">
+					<image src="{{item.pic}}"></image>
+					<view class="tiku-list-title">{{item.name}}</view>
+				</view>
+
+
+			</view>
+		</view>
+
+	</view>
+
 </view>

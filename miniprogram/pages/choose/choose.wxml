@@ -1,0 +1,8 @@
+<!--pages/choose/choose.wxml-->
+<view class="choose-container">
+	<mp-cells title="单选列表项">
+		<mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">
+			<mp-checkbox wx:for="{{radioItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}"  checked="{{item.value===currentCollection}}"></mp-checkbox>
+		</mp-checkbox-group>
+	</mp-cells>
+</view>

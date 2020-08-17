@@ -30,5 +30,6 @@
     </view>
     <!-- 显示当前题库分类和对应题目，点击题目可以跳转到查看题目的界面 -->
     <view class="face-body">
+        <show-list />
     </view>
 </view>

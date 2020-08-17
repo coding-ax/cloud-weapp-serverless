@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/topic/topic",
     "pages/home/home",
-    "pages/search/search",
+    "pages/choose/choose",
     "pages/mine/mine",
+    "pages/search/search",
     "pages/face/face"
   ],
   "window": {
@@ -39,5 +41,8 @@
         "selectedIconPath": "./images/icons/profile_active.png"
       }
     ]
+  },
+  "useExtendedLib": {
+    "weui": true
   }
 }

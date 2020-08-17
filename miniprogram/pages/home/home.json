@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "icon-self":"../../components/icon-self/icon-self"
+    "icon-self":"../../components/icon-self/icon-self",
+    "mp-dialog":"weui-miniprogram/dialog/dialog"
   }
 }

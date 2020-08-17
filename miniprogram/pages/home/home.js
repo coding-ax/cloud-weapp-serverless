@@ -9,6 +9,13 @@ Page({
      */
     data: {
         current: [],
+        progress: {
+            finished: 0,
+            lasted: 0,
+            currentItem: null,
+            currentPercent: 0
+        },
+        currentCollection: ""
     },
 
     navGo: (event) => {
@@ -21,15 +28,48 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: async function (options) {
+        // 常规首次登录入口
+        // 加载题库并进行设置
         wx.showLoading({
-          title: '加载中',
+            title: '加载中',
         })
         let res = await db.collection("choose").get();
+        res = res.data;
+        // 加载本地已经选择的记录和进度
+        let local_status = wx.getStorageSync('collection')
+        let current = res.filter(item => {
+            return item.collection === local_status
+        })[0]
+        console.log(current)
+        // 获取本地进度
+        let status = wx.getStorageSync(local_status + "_progress");
+        let progress = null;
+        let currentCollection = current.collection;
+        if (status) {
+            console.log("test")
+            // 获取到就赋值给progress
+            progress = JSON.parse(status);
+
+        }
+        else {
+            // 没有本地记录，说明需要进行设置
+            console.log("fail to get")
+            progress = {
+                finished: 0,
+                lasted: current.length,
+                currentItem: current.name,
+                currentPercent: 0
+            }
+            wx.setStorageSync(local_status + "_progress", JSON.stringify(progress))
+        }
+
         this.setData({
-            current: res.data
+            current: res,
+            progress,
+            currentCollection,
         }, () => {
             wx.hideLoading({
-              complete: (res) => {},
+                complete: (res) => { },
             })
         })
 
@@ -46,7 +86,46 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+        // 从修改题库返回处理
+        let collection = wx.getStorageSync("collection");
+        if (collection !== this.data.currentCollection) {
+            wx.showLoading({
+                title: '加载中',
+            })
+            // 加载本地已经选择的记录和进度
+            let current = this.data.current.filter(item => {
+                return item.collection === collection
+            })[0]
+            // 获取本地进度
+            let status = wx.getStorageSync(collection + "_progress");
+            let progress = null;
+            let currentCollection = current.collection;
+            if (status) {
+                console.log("test")
+                // 获取到就赋值给progress
+                progress = JSON.parse(status);
+            }
+            else {
+                // 没有本地记录，说明需要进行设置
+                console.log("fail to get")
+                progress = {
+                    finished: 0,
+                    lasted: current.length,
+                    currentItem: current.name,
+                    currentPercent: 0
+                }
+                wx.setStorageSync(collection + "_progress", JSON.stringify(progress))
+            }
 
+            this.setData({
+                progress,
+                currentCollection,
+            }, () => {
+                wx.hideLoading({
+                    complete: (res) => { },
+                })
+            })
+        }
     },
 
     /**
