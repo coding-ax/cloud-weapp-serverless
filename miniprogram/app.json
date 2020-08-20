@@ -1,7 +1,8 @@
 {
-  "pages": [
-    "pages/topic/topic",
+  "pages": [ 
     "pages/home/home",
+    "pages/topic/topic",
+   
     "pages/choose/choose",
     "pages/mine/mine",
     "pages/search/search",

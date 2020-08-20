@@ -15,7 +15,8 @@ Page({
             currentItem: null,
             currentPercent: 0
         },
-        currentCollection: ""
+        currentCollection: "",
+        onLoadFinished: false
     },
 
     navGo: (event) => {
@@ -35,8 +36,19 @@ Page({
         })
         let res = await db.collection("choose").get();
         res = res.data;
-        // 加载本地已经选择的记录和进度
+        // 加载本地已经选择的记录和进度,没有就直接返回
         let local_status = wx.getStorageSync('collection')
+        if (!local_status) {
+            this.setData({
+                current: res,
+                onLoadFinished: true
+            }, () => {
+                wx.hideLoading({
+                    complete: (res) => { },
+                })
+            })
+            return;
+        }
         let current = res.filter(item => {
             return item.collection === local_status
         })[0]
@@ -67,6 +79,8 @@ Page({
             current: res,
             progress,
             currentCollection,
+            // 标记加载完成
+            onLoadFinished: true
         }, () => {
             wx.hideLoading({
                 complete: (res) => { },
@@ -86,9 +100,17 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        // 从修改题库返回处理
+        // 从修改题库返回处理  设置一个状态记录是否是options完成
         let collection = wx.getStorageSync("collection");
-        if (collection !== this.data.currentCollection) {
+        // 从继续学习返回处理了
+        let jindu = wx.getStorageSync(collection + "_progress");
+        if (jindu && this.data.progress.lasted !== jindu.lasted) {
+            jindu = JSON.parse(jindu)
+            this.setData({
+                progress: jindu
+            })
+        }
+        if (collection && this.data.onLoadFinished && collection !== this.data.currentCollection) {
             wx.showLoading({
                 title: '加载中',
             })

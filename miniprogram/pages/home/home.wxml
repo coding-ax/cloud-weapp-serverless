@@ -44,7 +44,7 @@
 	</view>
 	<!-- 继续学习按钮 -->
 	<view class="continue-button">
-		<button>继续学习</button>
+		<button data-route="/pages/topic/topic" bindtap="navGo">继续学习</button>
 	</view>
 	<!-- 显示题库 -->
 	<view class="tiku-box">

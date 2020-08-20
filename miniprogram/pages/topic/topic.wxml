@@ -1,24 +1,27 @@
 <!--pages/topic/topic.wxml-->
 <view class="topic-container">
+	<mp-toptips msg="{{error}}" delay="1000" type="error" show="{{error}}"></mp-toptips>
 	<!-- 题目框 -->
 	<view class="topic-box">
-		<icon-self src="../../images/icons/wenhao.png" />
-		<view class="topic_title">{{current.title}}</view>
+		<icon-self size="60" src="../../images/icons/wenhao.png" />
+		<view class="topic-title">{{current.title}}</view>
 	</view>
 	<!-- 答案框 -->
 	<view class="topic-ans">
-		<view class="choose-item" wx:for="ansItems">
-			<icon-self src="../../images/icons/choose.png" />
-			<view class="ans-title">{{item.title}}</view>
-			<icon-self src="../../images/icons/yes.png" />
-			<icon-self src="../../images/icons/err.png" />
+		<view class="choose-item,{{clicked&&(current.ans===index?'right-choose-item':'not-right-choose-item')}}" wx:for="{{current.choose}}" data-value="{{index}}" wx:key="item"  bindtap="clickedItem">
+			<icon-self  size="45" src="../../images/icons/choose.png" />
+			<view class="ans-title">{{item}}</view>
+			<view class="click-box" wx:if="{{clicked}}" >
+				<icon-self size="35" src="../../images/icons/yes.png" wx:if="{{index===current.ans}}" />
+				<icon-self  size="45" src="../../images/icons/err.png" wx:else  />
+			</view>
 		</view>
 
 	</view>
 	<!-- 状态栏控制 -->
 	<view class="program-control">
-		<view class="op-item" wx:for="ops">
-			<icon-self src="{{item.src}}" />
+		<view class="op-item" wx:for="{{ops}}" wx:key="title" bindtap="{{item.func}}">
+			<icon-self size="45" src="{{item.src}}" />
 			<view class="op-title">{{item.title}}</view>
 		</view>
 	</view>

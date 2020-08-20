@@ -1,1 +1,81 @@
 /* pages/topic/topic.wxss */
+
+.topic-container {
+    margin: 15rpx 30rpx;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.topic-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 45rpx;
+    min-height: 100rpx;
+}
+
+.topic-title {
+    width: 80%;
+    margin-left: 20rpx;
+    word-break: break-all;
+}
+
+.topic-ans {
+    position: fixed;
+    left: 30rpx;
+    right: 30rpx;
+    bottom: 180rpx;
+    display: flex;
+    flex-direction: column;
+    /* display: none; */
+}
+
+.choose-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10rpx;
+    margin: 10rpx;
+    background-color: #fff;
+    width: 95%;
+    font-size: 50rpx;
+    border-radius: 10rpx;
+    box-shadow: 2px 2px 2px #888888;
+}
+.not-right-choose-item:hover{
+    background-color: #f1c40f;
+    color:#fff;
+}
+.right-choose-item:hover{
+    background-color: #2ecc71;
+    color:#fff;
+}
+.ans-title {
+    margin-left: 20rpx;
+    width: 80%;
+}
+.program-control{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    left: 30rpx;
+    right: 30rpx;
+    bottom: 20rpx;
+}
+.op-item{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 35rpx;
+    height: 45rpx;
+    line-height: 45rpx;
+}
+
+
