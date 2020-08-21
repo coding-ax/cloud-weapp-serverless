@@ -102,7 +102,7 @@ Page({
     onShow: function () {
         // 从修改题库返回处理  设置一个状态记录是否是options完成
         let collection = wx.getStorageSync("collection");
-        // 从继续学习返回处理了
+        // 从继续学习返回处理
         let jindu = wx.getStorageSync(collection + "_progress");
         if (jindu && this.data.progress.lasted !== jindu.lasted) {
             jindu = JSON.parse(jindu)

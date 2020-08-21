@@ -4,32 +4,17 @@
     <view class="face-head">
         <view class="choose-list">请选择你的题库</view>
         <view class="tiku-face-list">
-            <view class="face-head-item">
-                <text>web前端</text>
+            <view class="face-head-item" wx:for="{{tiku}}" wx:key="_id">
+                <text>{{item.title}}</text>
                 <view class="choose-info">
-                    <view>总计143道</view>
-                    <button size="mini" type="primary">选择</button>
+                    <view>总计{{item.length}}道</view>
+                    <button size="mini" type="primary" data-name="{{item.title}}" data-value="{{index}}" bindtap="chooseTiku">选择</button>
                 </view>
             </view>
-            <view class="face-head-item">
-                <text>Java后端</text>
-                <view class="choose-info">
-                    <view>总计43道</view>
-                    <button size="mini" type="primary">选择</button>
-                </view>
-            </view>
-            <view class="face-head-item">
-                <text>C++后端</text>
-                <view class="choose-info">
-                    <view>总计13道</view>
-                    <button size="mini" type="primary">选择</button>
-                </view>
-            </view>
-            
         </view> 
     </view>
     <!-- 显示当前题库分类和对应题目，点击题目可以跳转到查看题目的界面 -->
-    <view class="face-body">
-        <show-list />
+    <view class="face-body" wx:if="{{choosed}}">
+        <show-list list="{{list}}" />
     </view>
 </view>

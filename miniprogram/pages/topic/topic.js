@@ -35,6 +35,40 @@ Page({
         // 标记已经做到的地方
         finishStatus: 0
     },
+    setPic(current) {
+        // setdata是异步更新,所以封装成Promise
+        return new Promise((resolve, reject) => {
+            let collection = wx.getStorageSync('collection');
+            let picked = wx.getStorageSync(collection + "_pick");
+            // 设置picked
+            if (!picked) {
+                picked = {
+                    picked: []
+                }
+                wx.setStorageSync(collection + "_pick", JSON.stringify(picked))
+            }
+            else {
+                picked = JSON.parse(picked)
+            }
+            // 如果已经收藏
+            if (picked.picked.filter(item => {
+                return item.title === current.title
+            }).length === 0) {
+                this.data.ops[1].src = "../../images/icons/pick.png"
+                this.data.ops[1].title = "收藏"
+            }
+            else {
+                this.data.ops[1].src = "../../images/icons/picked.png"
+                this.data.ops[1].title = "取消收藏"
+            }
+            this.setData({
+                ops: this.data.ops
+            },()=>{
+                resolve("ok");
+            })
+        })
+
+    },
     // 点击选项
     clickedItem(event) {
         this.setData({
@@ -43,7 +77,7 @@ Page({
 
     },
     // 上一题点击
-    prevTick(event) {
+    async prevTick(event) {
         if (this.data.nowIndex === 0) {
             // 已经是第一个
             this.setData({
@@ -53,15 +87,16 @@ Page({
         }
         let nowIndex = (this.data.nowIndex - 1);
         let current = this.data.tiku[nowIndex];
+        // 关于收藏的图片处理
+        await this.setPic(current)
         this.setData({
             nowIndex,
             current,
             clicked: true
         })
-
     },
     // 下一题被点击
-    nextTick(event) {
+    async nextTick(event) {
         if (this.data.nowIndex === this.data.tiku.length - 1) {
             // 已经是第一个
             this.setData({
@@ -71,6 +106,10 @@ Page({
         }
         let nowIndex = (this.data.nowIndex + 1);
         let current = this.data.tiku[nowIndex];
+
+        // 关于收藏的图片处理
+        await this.setPic(current)
+
         // 小于该进度需要显示答案
         if (nowIndex < this.data.finishStatus) {
             this.setData({
@@ -107,8 +146,9 @@ Page({
                 }
                 picked.picked.push(current)
             }
-            wx.setStorageSync(collection + "_pick", picked)
+            wx.setStorageSync(collection + "_pick", JSON.stringify(picked))
             this.data.ops[1].src = "../../images/icons/picked.png"
+            this.data.ops[1].title = "取消收藏"
             this.setData({
                 ops: this.data.ops
             }, () => {
@@ -121,10 +161,22 @@ Page({
         //被收藏了 取消收藏
         else {
             // 被收藏肯定是有的
-            picked=JSON.parse(picked)
-            picked.picked.remove(current);
-            wx.setStorageSync(collection + "_pick", picked)
+            console.log(picked)
+            picked = JSON.parse(picked)
+            let deleteIdx = -1;
+            picked.picked.forEach((item, idx) => {
+                if (item.title === current.title) {
+                    console.log(idx)
+                    deleteIdx = idx;
+                    return;
+                }
+            })
+            // 将其删除
+            picked.picked.splice(deleteIdx, 1);
+            // picked.picked.
+            wx.setStorageSync(collection + "_pick", JSON.stringify(picked))
             this.data.ops[1].src = "../../images/icons/pick.png"
+            this.data.ops[1].title = "收藏"
             this.setData({
                 ops: this.data.ops
             }, () => {
@@ -174,13 +226,16 @@ Page({
         // 处理-1
         let nowIndex = collection_status.finished - 1 === -1 ? 0 : collection_status.finished - 1;
         let current = tiku[nowIndex];
+        // 处理收藏情况
+
         // 设置数据
         this.setData({
             current,
             tiku,
             nowIndex,
             finishStatus: nowIndex
-        }, () => {
+        }, async () => {
+            await this.setPic(current)
             setTimeout(() => {
                 // 设置防抖
                 wx.hideLoading({
