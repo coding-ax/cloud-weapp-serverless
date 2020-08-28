@@ -35,6 +35,7 @@ Page({
             return item.id === options.id
         })[0]
         let idx = options.index
+        console.log(current)
         this.setData({
             list,
             current

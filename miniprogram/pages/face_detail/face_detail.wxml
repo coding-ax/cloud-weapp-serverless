@@ -1,9 +1,12 @@
 <!--pages/face_detail/face_detail.wxml-->
 <view class="face_detail_container">
     <view class="title-container">
-        
+        <text>{{}}</text> 
     </view>
-    <view class="ans-container"></view>
+    <view class="ans-container">
+
+    </view>
+    <!-- 状态控制 -->
     <view class="program-control">
 		<view class="op-item" wx:for="{{ops}}" wx:key="title" bindtap="{{item.func}}">
 			<icon-self size="45" src="{{item.src}}" />
