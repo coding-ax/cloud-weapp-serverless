@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/face/face",
+    "pages/face_detail/face_detail",
     "pages/home/home",
     "pages/topic/topic",
     "pages/choose/choose",

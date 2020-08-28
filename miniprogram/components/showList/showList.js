@@ -6,32 +6,7 @@ Component({
     properties: {
         list: {
             type: Array,
-            value: [
-                {
-                    id: 'widget',
-                    name: '业务相关',
-                    open: false,
-                    pages: ['video-swiper', 'emoji', 'index-list', 'tabs', 'vtabs']
-                },
-                {
-                    id: 'widget2',
-                    name: '业务相关2',
-                    open: false,
-                    pages: ['video-swiper', 'emoji', 'index-list', 'tabs', 'vtabs']
-                },
-                {
-                    id: 'widget3',
-                    name: '业务相关2',
-                    open: false,
-                    pages: ['video-swiper', 'emoji', 'index-list', 'tabs', 'vtabs']
-                },
-                {
-                    id: 'widget4',
-                    name: '业务相关2',
-                    open: false,
-                    pages: ['video-swiper', 'emoji', 'index-list', 'tabs', 'vtabs']
-                }
-            ]
+            value: []
         }
     },
 
@@ -39,7 +14,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-
+        data: {}
     },
 
     /**
@@ -55,8 +30,12 @@ Component({
                     list[i].open = false
                 }
             }
+
             this.setData({
-                list: list
+                list: list,
+                data: {
+                    list: list
+                }
             });
         }
     }

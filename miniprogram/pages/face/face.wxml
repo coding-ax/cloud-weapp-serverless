@@ -1,20 +1,20 @@
 <!--pages/face/face.wxml-->
 <view class="face-container">
-    <!-- 展示题库，点击后刷新下部分 -->
-    <view class="face-head">
-        <view class="choose-list">请选择你的题库</view>
-        <view class="tiku-face-list">
-            <view class="face-head-item" wx:for="{{tiku}}" wx:key="_id">
-                <text>{{item.title}}</text>
-                <view class="choose-info">
-                    <view>总计{{item.length}}道</view>
-                    <button size="mini" type="primary" data-name="{{item.title}}" data-value="{{index}}" bindtap="chooseTiku">选择</button>
-                </view>
-            </view>
-        </view> 
-    </view>
-    <!-- 显示当前题库分类和对应题目，点击题目可以跳转到查看题目的界面 -->
-    <view class="face-body" wx:if="{{choosed}}">
-        <show-list list="{{list}}" />
-    </view>
+	<!-- 展示题库，点击后刷新下部分 -->
+	<view class="face-head">
+		<view class="choose-list">请选择你的题库</view>
+		<view class="tiku-face-list">
+			<view class="face-head-item" wx:for="{{tiku}}" wx:key="_id">
+				<text>{{item.title}}</text>
+				<view class="choose-info">
+					<view>总计{{item.length}}道</view>
+					<button size="mini" type="primary" data-name="{{item.title}}" data-value="{{index}}" bindtap="chooseTiku">{{currentTiku&&(item.collection==currentTiku)?'已选择':'选择'}}</button>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 显示当前题库分类和对应题目，点击题目可以跳转到查看题目的界面 -->
+	<view class="face-body" wx:if="{{choosed}}">
+		<show-list list="{{list}}" />
+	</view>
 </view>
