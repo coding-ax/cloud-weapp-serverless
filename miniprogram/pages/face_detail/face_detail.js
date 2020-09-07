@@ -21,10 +21,16 @@ Page({
             func: "nextTick"
         }
         ],
-        list:null,
-        current:null
+        list: null,
+        showAns: false,
+        current: null,
+        idx: 0
     },
-
+    changeShow() {
+        this.setData({
+            showAns: !this.data.showAns
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -35,10 +41,11 @@ Page({
             return item.id === options.id
         })[0]
         let idx = options.index
-        console.log(current)
+        console.log(current.ans[idx], current.pages[idx])
         this.setData({
             list,
-            current
+            current,
+            idx
         })
     },
 

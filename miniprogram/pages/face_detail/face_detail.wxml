@@ -1,13 +1,25 @@
 <!--pages/face_detail/face_detail.wxml-->
 <view class="face_detail_container">
-    <view class="title-container">
-        <text>{{}}</text> 
-    </view>
-    <view class="ans-container">
+	<view class="title-container">
+		<text>{{current.ans[idx]}}</text>
+	</view>
+	<view class="title-body">
+		<view class="title-desc" catchtap="changeShow">
+			<text>参考答案</text>
+			<image src="../../images/icons/nex.png"></image>
+		</view>
+		<view class="ans-container" wx:if="{{showAns}}">
+			<text>{{current.pages[idx]}}</text>
+		</view>
+	</view>
 
-    </view>
-    <!-- 状态控制 -->
-    <view class="program-control">
+
+</view>
+<view class="back-container">
+	<!-- 遮罩 -->
+
+	<!-- 状态控制 -->
+	<view class="program-control">
 		<view class="op-item" wx:for="{{ops}}" wx:key="title" bindtap="{{item.func}}">
 			<icon-self size="45" src="{{item.src}}" />
 			<view class="op-title">{{item.title}}</view>

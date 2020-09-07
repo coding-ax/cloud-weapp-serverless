@@ -22,3 +22,55 @@
     height: 45rpx;
     line-height: 45rpx;
 }
+.title-body{
+    /* background-color: #fff; */
+}
+/* 题目栏目 */
+.title-container{
+    background-color: #fff;
+    /* border-bottom: 2rpx solid #888; */
+    padding: 15rpx 10rpx;
+    margin: 30rpx 20rpx;
+    font-weight: 700;
+    border-radius: 30rpx;
+}
+/* 参考答案修改 */
+.title-desc{
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    color: #0984e3;
+    padding: 35rpx 20rpx;
+    /* margin: 10rpx 20rpx; */
+    margin: 0rpx 20rpx;
+
+    z-index: 1;
+}
+.title-desc image{
+    width: 80rpx;
+    height: 80rpx;
+    transform: rotate(90deg);
+}
+/* 答案 */
+.title-body{
+    overflow: hidden;
+}
+.ans-container{
+    /* background-color: #fff; */
+    padding: 35rpx 20rpx;
+    margin: 10rpx 20rpx;
+    min-height: 30vh;
+    animation: move_y .5s;
+}
+
+@keyframes move_y{
+    0%{
+        transform: translateY(-70%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
