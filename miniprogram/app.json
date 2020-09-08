@@ -1,12 +1,14 @@
 {
   "pages": [
+    "pages/pic/pic",
+    "pages/home/home",
+    "pages/search/search",
     "pages/face/face",
     "pages/face_detail/face_detail",
-    "pages/home/home",
+    
     "pages/topic/topic",
     "pages/choose/choose",
-    "pages/mine/mine",
-    "pages/search/search"
+    "pages/mine/mine"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

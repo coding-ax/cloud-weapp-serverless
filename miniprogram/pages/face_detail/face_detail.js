@@ -24,12 +24,43 @@ Page({
         list: null,
         showAns: false,
         current: null,
-        idx: 0
+        idx: 0,
+        error: ''
     },
     changeShow() {
         this.setData({
             showAns: !this.data.showAns
         })
+    },
+    nextTick() {
+        let length = this.data.current.pages.length;
+        let idx = this.data.idx;
+        if (idx < length - 1) {
+            idx++
+            this.setData({
+                idx,
+                showAns: true
+            })
+        } else {
+            this.setData({
+                error: "已经是最后一个了!"
+            })
+        }
+
+    },
+    prevTick() {
+        let idx = this.data.idx;
+        if (idx > 0) {
+            idx--
+            this.setData({
+                idx,
+                showAns: false
+            })
+        } else {
+            this.setData({
+                error: "已经是第一个了!"
+            })
+        }
     },
     /**
      * 生命周期函数--监听页面加载

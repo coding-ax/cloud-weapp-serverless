@@ -1,7 +1,8 @@
 <!--pages/face_detail/face_detail.wxml-->
 <view class="face_detail_container">
+<mp-toptips msg="{{error}}" delay="1000" type="error" show="{{error}}"></mp-toptips>
 	<view class="title-container">
-		<text>{{current.ans[idx]}}</text>
+		<text>{{current.pages[idx]}}</text>
 	</view>
 	<view class="title-body">
 		<view class="title-desc" catchtap="changeShow">
@@ -9,7 +10,7 @@
 			<image src="../../images/icons/nex.png"></image>
 		</view>
 		<view class="ans-container" wx:if="{{showAns}}">
-			<text>{{current.pages[idx]}}</text>
+			<text>{{current.ans[idx]}}</text>
 		</view>
 	</view>
 

@@ -14,6 +14,13 @@
 			</view>
 		</view>
 	</view>
+	<view>
+		 <mp-cells title="搜索类型">
+                <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">
+                    <mp-checkbox wx:for="{{radioItems}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"></mp-checkbox>
+                </mp-checkbox-group>
+            </mp-cells>
+	</view>
 	<!-- 显示搜索结果（以题目简略显示模式） -->
 	<view class="search-res">
 

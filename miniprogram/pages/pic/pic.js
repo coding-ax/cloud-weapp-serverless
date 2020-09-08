@@ -1,22 +1,18 @@
-// pages/search/search.js
-const db = wx.cloud.database();
-const _ = db.command;
+// pages/pic/pic.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        radioItems: [
-            {name: '选择题', value: '0', checked: true},
-            {name: '面试题', value: '1'}
-        ],
+
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        wx.getStorageSync('')
     },
 
     /**

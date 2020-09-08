@@ -2,7 +2,7 @@
 <view class="face-container">
 	<!-- 展示题库，点击后刷新下部分 -->
 	<view class="face-head">
-		<view class="choose-list">请选择你的题库</view>
+		<view class="choose-list" wx:if="{{!choosed}}">请选择你的题库</view>
 		<view class="tiku-face-list">
 			<view class="face-head-item" wx:for="{{tiku}}" wx:key="_id">
 				<text>{{item.title}}</text>

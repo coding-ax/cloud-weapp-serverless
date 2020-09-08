@@ -1,15 +1,13 @@
 <!--pages/home/home.wxml-->
 <view class="home-container">
 	<!-- 搜索栏 -->
-	<view class="search-box">
-		<!-- 点击跳转搜索界面 -->
+	<!-- <view class="search-box">
 		<view class="search-view" data-route="/pages/search/search" bindtap="navGo">
-			<!-- 主按钮 点击显示遮盖 -->
 			<button>
 				<icon type="search"></icon>搜题
 			</button>
 		</view>
-	</view>
+	</view> -->
 	<!-- 进度控制栏 -->
 	<view class="progress-box">
 		<!-- 进度文字显示 -->

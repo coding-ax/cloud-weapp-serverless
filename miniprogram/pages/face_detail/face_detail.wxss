@@ -22,9 +22,6 @@
     height: 45rpx;
     line-height: 45rpx;
 }
-.title-body{
-    /* background-color: #fff; */
-}
 /* 题目栏目 */
 .title-container{
     background-color: #fff;
