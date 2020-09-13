@@ -1,47 +1,50 @@
 <!--pages/mine/mine.wxml-->
 <view class="home-container">
-    <!-- 登录后才同步数据，否则就只有本地 -->
-    <view class="home-login" wx:if="{{!isLogin}}">
-        <button open-type="getUserInfo" type="primary" bindgetuserinfo="getUserInfo">点我授权登录</button>
-        <view class="info-box">
-            <icon type="info"></icon>
-            <view>登陆后可以同步学习进度到云端哦~</view>
-        </view>
-    </view>
-    <!-- 已经登录 -->
-    <view class="home-logined" wx:else >
-        <view>{{nickname}}</view>
-        <image src="{{avatar}}" />
-    </view>
-    <!-- 共享菜单界面 -->
-    <view class="home-menu">
-        <view class="home-menu-item">
+	<!-- 登录后才同步数据，否则就只有本地 -->
+	<view class="home-login" wx:if="{{!isLogin}}">
+		<button open-type="getUserInfo" type="primary" bindgetuserinfo="getUserInfo">点我授权登录</button>
+		<view class="info-box">
+			<icon type="info"></icon>
+			<view>登录查看更多信息</view>
+		</view>
+	</view>
+	<!-- 已经登录 -->
+	<view class="home-logined" wx:else>
+		<view>{{nickname}}</view>
+		<image src="{{avatar}}" />
+	</view>
+	<!-- 共享菜单界面 -->
+	<view class="home-menu">
+		<!-- <view class="home-menu-item">
             <view>
                 <icon-self src="../../images/icons/pick.png"  />
                 <text> 我的收藏</text>
             </view>
             <icon-self src="../../images/icons/next.png" />
-        </view>
-         <view class="home-menu-item">
-            <view>
-                <icon-self src="../../images/icons/clear.png"  />
-                <text> 清除缓存</text>
-            </view>
-             <icon-self src="../../images/icons/next.png" />
-        </view>
-         <view class="home-menu-item" style="margin-top:45rpx">
-            <view>
-                <icon-self src="../../images/icons/kefu.png"  />
-              <text> 联系客服</text>
-            </view>
-             <icon-self src="../../images/icons/next.png" />
-        </view>
-         <view class="home-menu-item" >
+        </view> -->
+		<view class="home-menu-item" bindtap="clearStorage">
+			<view>
+				<icon-self src="../../images/icons/clear.png" />
+				<text> 清除缓存</text>
+			</view>
+			<icon-self src="../../images/icons/next.png" />
+		</view>
+		<view class="home-menu-item" style="margin-top:45rpx" bindtap="contact">
+			<view>
+				<icon-self src="../../images/icons/kefu.png" />
+                <button>联系开发者</button> 
+				<!-- <text> </text> -->
+				<!-- <contact-button type="default-light" size="30" session-from="weapp" class="guest-button"> -->
+				<!-- </contact-button> -->
+			</view>
+			<icon-self src="../../images/icons/next.png" />
+		</view>
+		<!-- <view class="home-menu-item" >
          <view>
             <icon-self src="../../images/icons/help.png" />
             <text> 帮助</text>
         </view>
             <icon-self src="../../images/icons/next.png" />
-        </view>
-    </view>
+        </view> -->
+	</view>
 </view>

@@ -1,33 +1,37 @@
 /* pages/mine/mine.wxss */
 /* 盒子 */
-.home-container{
+.home-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 /* 登录头像盒子 */
-.home-login{
+.home-login {
     width: calc(100%-60rpx);
-    margin:0rpx;
+    margin: 0rpx;
     display: flex;
     flex-direction: column;
     padding: 30rpx 30rpx;
     border-bottom: 1px solid #b2bec3;
 }
-.home-login button{
+
+.home-login button {
     background-color: #fd79a8;
 }
-.info-box{
-     font-size: 25rpx;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     margin-top: 10rpx;
-     color: #707070;
+
+.info-box {
+    font-size: 25rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rpx;
+    color: #707070;
 }
+
 /* 已经登录 */
-.home-logined{
+.home-logined {
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -36,24 +40,28 @@
     padding: 40rpx 20rpx;
     border-bottom: 1px solid #b2bec3;
 }
-.home-logined view{
+
+.home-logined view {
     float: left;
 }
-.home-logined image{
+
+.home-logined image {
     width: 100rpx;
     height: 100rpx;
     border-radius: 50%;
 }
+
 /* 菜单栏控制 */
-.home-menu{
+.home-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 30rpx;
 }
-.home-menu-item{
-    width:90%;
-    padding:30rpx 30rpx;
+
+.home-menu-item {
+    width: 90%;
+    padding: 30rpx 30rpx;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -61,7 +69,19 @@
     font-weight: 700;
 
 }
-.contact-with-us{
+
+.home-menu-item view {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+}
+.home-menu-item button{
+    padding: 0;
+    width: auto;
+    justify-content: center;
+}
+.contact-with-us {
     display: inline;
     text-align: start;
 }

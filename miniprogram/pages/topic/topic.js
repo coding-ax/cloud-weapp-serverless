@@ -63,7 +63,7 @@ Page({
             }
             this.setData({
                 ops: this.data.ops
-            },()=>{
+            }, () => {
                 resolve("ok");
             })
         })
@@ -71,9 +71,9 @@ Page({
     },
     // 点击选项
     clickedItem(event) {
-        this.setData({
-            clicked: true
-        })
+        // this.setData({
+        //     clicked: true
+        // })
 
     },
     // 上一题点击
@@ -92,7 +92,7 @@ Page({
         this.setData({
             nowIndex,
             current,
-            clicked: true
+            // clicked: true
         })
     },
     // 下一题被点击
@@ -115,7 +115,7 @@ Page({
             this.setData({
                 nowIndex,
                 current,
-                clicked: true
+                // clicked: true
             })
         }
         // 否则推动进度
@@ -124,7 +124,7 @@ Page({
             this.setData({
                 nowIndex,
                 current,
-                clicked: false,
+                // clicked: false,
             })
         }
 
@@ -236,12 +236,12 @@ Page({
             finishStatus: nowIndex
         }, async () => {
             await this.setPic(current)
-            setTimeout(() => {
-                // 设置防抖
-                wx.hideLoading({
-                    success: (res) => { },
-                })
-            }, 300);
+            // setTimeout(() => {
+            // 设置防抖
+            wx.hideLoading({
+                success: (res) => { },
+            })
+            // }, 300);
 
         })
     },

@@ -10,11 +10,11 @@ Page({
             src: "../../images/icons/pre.png",
             func: "prevTick"
         },
-        {
-            title: "收藏",
-            src: "../../images/icons/pick.png",
-            func: "pickTick"
-        },
+        // {
+        //     title: "收藏",
+        //     src: "../../images/icons/pick.png",
+        //     func: "pickTick"
+        // },
         {
             title: "下一题",
             src: "../../images/icons/nex.png",
