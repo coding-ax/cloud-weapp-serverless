@@ -10,7 +10,6 @@ Page({
         tiku: [],
         current: null,
         // 是否显示结果
-        clicked: false,
         ops: [{
             title: "上一题",
             src: "../../images/icons/pre.png",
@@ -74,7 +73,19 @@ Page({
         // this.setData({
         //     clicked: true
         // })
-
+        // console.log()
+        let idx = event.currentTarget.dataset.value
+        let current = this.data.current;
+        // current.choose[idx].clicked = true;
+        current.choose = current.choose.map((item, index) => {
+            return {
+                title: item.title,
+                clicked: idx === index
+            }
+        })
+        this.setData({
+            current
+        })
     },
     // 上一题点击
     async prevTick(event) {
@@ -225,9 +236,25 @@ Page({
         tiku = tiku.data[0].tiku;
         // 处理-1
         let nowIndex = collection_status.finished - 1 === -1 ? 0 : collection_status.finished - 1;
+        tiku = tiku.map(item => {
+            return {
+                ...item,
+                choose: item.choose.map(item1 => {
+                    return {
+                        title: item1,
+                        clicked: false
+                    }
+                })
+            }
+        })
         let current = tiku[nowIndex];
+        // current.choose = current.choose.map(item => {
+        //     return {
+        //         title: item,
+        //         clicked: false
+        //     }
+        // })
         // 处理收藏情况
-
         // 设置数据
         this.setData({
             current,

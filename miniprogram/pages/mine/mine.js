@@ -9,13 +9,32 @@ Page({
         avatar: "",
         nickname: ""
     },
-    getUserInfo(e){
+    getUserInfo(e) {
         // 设置授权信息
         this.setData({
-            avatar:e.detail.userInfo.avatarUrl,
-            nickname:e.detail.userInfo.nickName,
-            isLogin:true
+            avatar: e.detail.userInfo.avatarUrl,
+            nickname: e.detail.userInfo.nickName,
+            isLogin: true
         });
+    },
+    clearStorage() {
+        // 清除缓存
+        wx.showModal({
+            title: '提示',
+            content: '这是一个模态弹窗',
+            success(res) {
+                if (res.confirm) {
+                    wx.showLoading({
+                        title: '清除中',
+                    })
+                    wx.clearStorageSync();
+                    wx.hideLoading({
+                        success: (res) => { },
+                    })
+                }
+            }
+        })
+
     },
     /**
      * 生命周期函数--监听页面加载
@@ -23,16 +42,16 @@ Page({
     onLoad: async function (options) {
         // 登录态判断
         wx.getUserInfo({
-          complete: (res) => {
-              console.log(res);
-              if(res.userInfo!=undefined){
-                this.setData({
-                    avatar:res.userInfo.avatarUrl,
-                    nickname:res.userInfo.nickName,
-                    isLogin:true
-                });
-              }
-          },
+            complete: (res) => {
+                console.log(res);
+                if (res.userInfo != undefined) {
+                    this.setData({
+                        avatar: res.userInfo.avatarUrl,
+                        nickname: res.userInfo.nickName,
+                        isLogin: true
+                    });
+                }
+            },
         })
     },
 

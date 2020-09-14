@@ -44,11 +44,11 @@
     border-radius: 10rpx;
     box-shadow: 2px 2px 2px #888888;
 }
-.not-right-choose-item:hover{
-    background-color: #f1c40f;
+.not-right-choose-item{
+    background-color: #d63031;
     color:#fff;
 }
-.right-choose-item:hover{
+.right-choose-item-right{
     background-color: #2ecc71;
     color:#fff;
 }
