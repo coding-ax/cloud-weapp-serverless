@@ -1,9 +1,14 @@
 {
   "tiku": [
     {
-      "title": "jsjsjsjsjstest the ti mu of 1 ",
-      "ans": 1,
-      "choose": ["12321321", "321312", "3213123", "23121312"]
+      "title": "关于JavaScript说法正确的是： ",
+      "ans": 2,
+      "choose": [
+        "a) JavaScript与Java语法完全一样 ",
+        "b) JavaScript要运行必须安装Java运行环境 ",
+        "c) JavaScript一般用于在网页上实现数据验证及特效等 ",
+        "d) JavaScript可于开发Windows应用程序"
+      ]
     },
     {
       "title": "2313123",
