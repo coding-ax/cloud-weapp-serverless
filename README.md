@@ -16,7 +16,7 @@
 
 ##### 2.1 思路架构图
 
-![image-20200917163655209](README.assets/image-20200917163655209.png)
+![image-20200917163655209](https://img-blog.csdnimg.cn/20200917170753476.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODMxMDI3,size_16,color_FFFFFF,t_70#pic_center)
 
 #### 三、作品实现
 
