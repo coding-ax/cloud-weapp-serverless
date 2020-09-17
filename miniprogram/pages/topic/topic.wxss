@@ -30,6 +30,8 @@
     display: flex;
     flex-direction: column;
     /* display: none; */
+    max-height: 50vh;
+    overflow-y: scroll;
 }
 
 .choose-item {

@@ -2,5 +2,6 @@
   "usingComponents": {
     "icon-self": "../../components/icon-self/icon-self",
     "mp-toptips": "weui-miniprogram/toptips/toptips"
-  }
+  },
+  "navigationBarTitleText": "选择题"
 }

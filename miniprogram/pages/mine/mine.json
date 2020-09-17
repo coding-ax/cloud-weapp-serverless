@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "icon-self":"../../components/icon-self/icon-self"
-  }
+  },
+  "navigationBarTitleText": "个人资料"
 }

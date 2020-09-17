@@ -1,34 +1,59 @@
 {
   "tiku": [
     {
-      "title": "关于JavaScript说法正确的是： ",
+      "title": "在JavaScript中，'1555'+3的运行结果是",
+      "ans": 1,
+      "choose": ["12321321", "321312", "3213123", "23121312"]
+    },
+    {
+      "title": "JavaScript实现对表格动态操作：如何插入单元格",
       "ans": 2,
-      "choose": [
-        "a) JavaScript与Java语法完全一样 ",
-        "b) JavaScript要运行必须安装Java运行环境 ",
-        "c) JavaScript一般用于在网页上实现数据验证及特效等 ",
-        "d) JavaScript可于开发Windows应用程序"
-      ]
+      "choose": ["deleteRow(i);", "deleteCell (i);", "insertCell (i);", "insertRow(i);"]
     },
     {
-      "title": "2313123",
-      "ans": 1,
-      "choose": ["3213213", "3213123", "32131", "321312"]
+      "title": "实现表单元素中的复选框或单选框默认为已选定，要在input标签中加（  ）属性 ",
+      "ans": 0,
+      "choose": ["checked", "selected", "type", "disabled"]
     },
     {
-      "title": "12321312",
-      "ans": 1,
-      "choose": ["32131", "3213213", "31231321", "3213"]
+      "title": "setTimeout(\"adv()\",20)表示的意思是",
+      "ans": 0,
+      "choose": ["20毫秒后，adv()函数就会被调用", "adv()函数被持续调用20次", "20分钟后，adv()函数就会被调用", "20秒后，adv()函数就会被调用"]
     },
     {
-      "title": "213123",
-      "ans": 1,
-      "choose": ["213143", "43545", "5435", "454353"]
+      "title": "Javascript里String对象通过（　）方法取第一次出现子字符串的字符位置。",
+      "ans": 3,
+      "choose": ["toLowerCase()", "toUpperCase()", "lastIndexOf()", "indexOf()"]
     },
     {
-      "title": "435345",
+      "title": "在JavaScript中，'1555'+3的运行结果是()",
+      "ans": 2,
+      "choose": ["1553", "1558", "15553", "1552"]
+    },
+    {
+      "title": "以下不属于javascript中提供的常用数据类型的是",
+      "ans": 3,
+      "choose": ["number", "string", "undefined", "float"]
+    },
+    {
+      "title": "typeof [\"1\",\"2\",\"3\"] 的结果是",
+      "ans": 3,
+      "choose": ["number", "boolean", "string", "object"]
+    },
+    {
+      "title": "某页面中有一个1行2列的表格，其中表格行<tr>的id为r1, 下列(  )能在表格中增加一列，并且将这一列显示在最前面。",
+      "ans": 3,
+      "choose": ["document.getElementById(\"r1\").Cells(1);", "document.getElemtntById(\"r1\").Cells(0);", "document.getElemtntById(\"r1\").insertCell(1);", "document.getElementById(\"r1\").insertCell(0);"]
+    },
+    {
+      "title": "有语句“var x=0;while(       ) {x+=2; }”，要使while循环体执行10次，空白处的循环判定式应写为：",
       "ans": 1,
-      "choose": ["543534", "435345", "6757", "435345"]
+      "choose": ["x<10", "x<20", "x<=10", "x<=20"]
+    },
+    {
+      "title": "xgp",
+      "ans": 3,
+      "choose": ["nb", "不nb", "很nb", "超nb"]
     }
   ]
 }

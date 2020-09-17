@@ -7,9 +7,11 @@
     align-items: center;
     text-align: center;
     position: fixed;
-    left: 30rpx;
-    right: 30rpx;
-    bottom: 20rpx;
+    left: 0rpx;
+    right: 0rpx;
+    bottom: 0rpx;
+    padding: 15rpx 30rpx;
+    background-color: #f5f5f5;
 }
 .op-item{
     flex: 1;
@@ -42,8 +44,7 @@
     color: #0984e3;
     padding: 35rpx 20rpx;
     /* margin: 10rpx 20rpx; */
-    margin: 0rpx 20rpx;
-
+    margin: 0rpx 20rpx;    
     z-index: 1;
 }
 .title-desc image{
@@ -60,6 +61,7 @@
     padding: 35rpx 20rpx;
     margin: 10rpx 20rpx;
     min-height: 30vh;
+    margin-bottom: 50rpx;
     animation: move_y .5s;
 }
 

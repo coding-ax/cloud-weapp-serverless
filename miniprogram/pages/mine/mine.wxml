@@ -32,7 +32,7 @@
 		<view class="home-menu-item" style="margin-top:45rpx" bindtap="contact">
 			<view>
 				<icon-self src="../../images/icons/kefu.png" />
-                <button>联系开发者</button> 
+                <button open-type="contact">联系开发者</button> 
 				<!-- <text> </text> -->
 				<!-- <contact-button type="default-light" size="30" session-from="weapp" class="guest-button"> -->
 				<!-- </contact-button> -->

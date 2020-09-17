@@ -21,7 +21,7 @@ Page({
         // 清除缓存
         wx.showModal({
             title: '提示',
-            content: '这是一个模态弹窗',
+            content: '确定要清除数据吗？',
             success(res) {
                 if (res.confirm) {
                     wx.showLoading({
@@ -43,7 +43,7 @@ Page({
         // 登录态判断
         wx.getUserInfo({
             complete: (res) => {
-                console.log(res);
+                // console.log(res);
                 if (res.userInfo != undefined) {
                     this.setData({
                         avatar: res.userInfo.avatarUrl,

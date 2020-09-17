@@ -66,13 +66,13 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.log(options)
+        // console.log(options)
         let list = wx.getStorageSync('face_list')
         let current = list.filter(item => {
             return item.id === options.id
         })[0]
         let idx = options.index
-        console.log(current.ans[idx], current.pages[idx])
+        // console.log(current.ans[idx], current.pages[idx])
         this.setData({
             list,
             current,

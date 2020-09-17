@@ -2,5 +2,6 @@
   "usingComponents": {
     "icon-self":"../../components/icon-self/icon-self",
     "mp-dialog":"weui-miniprogram/dialog/dialog"
-  }
+  },
+  "navigationBarTitleText": "选择题"
 }

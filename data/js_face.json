@@ -1,33 +1,89 @@
 {
-  "items": ["html相关", "css相关", "js相关"],
-  "html相关": [
+  "items": ["HTML， HTTP，web 综合问题", "javascript 概念部分", "Vue相关"],
+  "HTML， HTTP，web 综合问题": [
     {
-      "title": "从此以后，我不再为你难过",
-      "ans": "看着爱情的浪漫，再也没有方向，忘记曾经许下的愿望，可是谁又了解时过境迁"
+      "title": "前端需要注意哪些 SEO",
+      "ans": "1. 合理的 title、description、keywords：搜索对着三项的权重逐个减小，title 值强调重点即可，重要关键词出现不要超过 2 次，而且要靠前，不同页面 title 要有所不同；description 把页面内容高度概括，长度合适，不可过分堆砌关键词，不同页面 description 有所不同；keywords 列举出重要关键词即可\n2. 语义化的 HTML 代码，符合 W3C 规范：语义化代码让搜索引擎容易理解网页3. 重要内容 HTML 代码放在最前：搜索引擎抓取 HTML 顺序是从上到下，有的搜索引擎对抓取长度有限制，保证重要内容一定会被抓取\n4. 重要内容不要用 js 输出：爬虫不会执行 js 获取内容\n5. 少用 iframe：搜索引擎不会抓取 iframe 中的内容\n6. 非装饰性图片必须加 alt\n7. 提高网站速度：网站速度是搜索引擎排序的一个重要指标\n"
     },
     {
-      "title": "除了伤口没留下什么",
-      "ans": "看着爱情的浪漫，再也没有方向，忘记曾经许下的愿望，可是谁又了解时过境迁"
+      "title": "web 开发中会话跟踪的方法有哪些",
+      "ans": "1. cookie\n2. session\n3. url 重写\n4. 隐藏 input\n5. ip 地址"
+    },
+    {
+      "title": "<img>的`title`和`alt`有什么区别",
+      "ans": "1. `title`是[global attributes](http://www.w3.org/TR/html-markup/global-attributes.html#common.attrs.core)之一，用于为元素提供附加的 advisory information。通常当鼠标滑动到元素上的时候显示。2. `alt`是`<img>`的特有属性，是图片内容的等价描述，用于图片无法加载时显示、读屏器阅读图片。可提图片高可访问性，除了纯装饰图片外都必须设置有意义的值，搜索引擎会重点分析。"
+    },
+    {
+      "title": "doctype 是什么,举例常见 doctype 及特点",
+      "ans": "1. `1. `<!doctype>`声明必须处于 HTML 文档的头部，在`<html>`标签之前，HTML5 中不区分大小写\n2. `<!doctype>`声明不是一个 HTML 标签，是一个用于告诉浏览器当前 HTMl 版本的指令\n3. 现代浏览器的 html 布局引擎通过检查 doctype 决定使用兼容模式还是标准模式对文档进行渲染，一些浏览器有一个接近标准模型。\n4. 在 HTML4.01 中`<!doctype>`声明指向一个 DTD，由于 HTML4.01 基于 SGML，所以 DTD 指定了标记规则以保证浏览器正确渲染内容\n5. HTML5 不基于 SGML，所以不用指定 DTD"
+    },
+    {
+      "title": "HTTP request 报文结构是怎样的",
+      "ans": "1. 首行是  Request-Line  包括：  请求方法  ，  请求 URI  ，  协议版本  ，  CRLF  \n2. 首行之后是若干行  请求头  ，包括  general-header  ，  request-header  或者  entity-header  ，每个一行以 CRLF 结束\n3. 请求头和消息实体之间有一个  CRLF 分隔  \n4. 根据实际请求需要可能包含一个  消息实体  "
+    },
+    {
+      "title": "css sprite 是什么,有什么优缺点",
+      "ans": "概念：将多个小图片拼接到一个图片中。通过 background-position 和元素尺寸调节需要显示的背景图案n优点：\n1. 减少 HTTP 请求数，极大地提高页面加载速度\n2. 增加图片信息重复度，提高压缩比，减少图片大小\n3. 更换风格方便，只需在一张或几张图片上修改颜色或样式即可实现\n缺点：\n1. 图片合并麻烦\n2. 维护麻烦，修改一个图片可能需要重新布局整个图片，样式"
+    },
+    {
+      "title": "什么是 web 语义化,有什么好处",
+      "ans": "web 语义化是指通过 HTML 标记表示页面包含的信息，包含了 HTML 标签的语义化和 css 命名的语义化。HTML 标签的语义化是指：通过使用包含语义的标签（如 h1-h6）恰当地表示文档结构 css 命名的语义化是指：为 html 标签添加有意义的 class，id 补充未表达的语义，如[Microformat](http://en.wikipedia.org/wiki/Microformats)通过添加符合规则的 class 描述信息"
     }
   ],
-  "css相关": [
+  "javascript 概念部分": [
     {
-      "title": "不要在我的寂寞的时候说爱我",
-      "ans": "看着爱情的浪漫，再也没有方向，忘记曾经许下的愿望，可是谁又了解时过境迁"
+      "title": "DOM 元素 e 的 e.getAttribute(propName)和 e.propName 有什么区别和联系",
+      "ans": "  e.getAttribute()，是标准 DOM 操作文档元素属性的方法，具有通用性可在任意文档上使用，返回元素在源文件中  设置的属性  \ne.propName 通常是在 HTML 文档中访问特定元素的特性，浏览器解析元素后生成对应对象（如 a 标签生成 HTMLAnchorElement），这些对象的特性会根据特定规则结合属性设置得到，对于没有对应特性的属性，只能使用 getAttribute 进行访问\ne.getAttribute()返回值是源文件中设置的值，类型是字符串或者 null（有的实现返回\"\"）\ne.propName 返回值可能是字符串、布尔值、对象、undefined 等\n大部分 attribute 与 property 是一一对应关系，修改其中一个会影响另一个，如 id，title 等属性\n一些布尔属性`<input hidden/>`的检测设置需要 hasAttribute 和 removeAttribute 来完成，或者设置对应 property\n像`<a href=\"../index.html\">link</a>`中 href 属性，转换成 property 的时候需要通过转换得到完整 URL\n一些 attribute 和 property 不是一一对应如：form 控件中`<input value=\"hello\"/>`对应的是 defaultValue，修改或设置 value property 修改的是控件当前值，setAttribute 修改 value 属性不会改变 value property"
     },
     {
-      "title": "真的爱你",
-      "ans": "看着爱情的浪漫，再也没有方向，忘记曾经许下的愿望，可是谁又了解时过境迁"
+      "title": "offsetWidth/offsetHeight,clientWidth/clientHeight 与 scrollWidth/scrollHeight 的区别",
+      "ans": "offsetWidth/offsetHeight 返回值包含  content + padding + border  ，效果与 e.getBoundingClientRect()相同\nclientWidth/clientHeight 返回值只包含content + padding，如果有滚动条，也不包含滚动条  \nscrollWidth/scrollHeight 返回值包含  content + padding + 溢出内容的尺寸  "
+    },
+    {
+      "title": "javascript 有哪几种数据类型",
+      "ans": "六种基本数据类型- undefined null string boolean number [symbol](https://developer.mozilla.org/en-US/docs/Glossary/Symbol)(ES6)一种引用类型- Object"
+    },
+    {
+      "title": "什么是闭包,闭包有什么用",
+      "ans": "闭包是在某个作用域内定义的函数，它可以访问这个作用域内的所有变量。闭包作用域链通常包括三个部分：\n1. 函数本身作用域。\n2. 闭包定义时的作用域。\n3. 全局作用域。\n闭包常见用途：\n1. 创建特权方法用于访问控制\n事件处理程序及回调"
+    },
+    {
+      "title": "应用程序存储和离线 web 应用",
+      "ans": "HTML5 新增应用程序缓存，允许 web 应用将应用程序自身保存到用户浏览器中，用户离线状态也能访问。 1.为 html 元素设置 manifest 属性:`<html manifest=\"myapp.appcache\">`，其中后缀名只是一个约定，真正识别方式是通过`text/cache-manifest`作为 MIME 类型。所以需要配置服务器保证设置正确\n2.manifest 文件首行为`CACHE MANIFEST`，其余就是要缓存的 URL 列表，每个一行，相对路径都相对于 manifest 文件的 url。注释以#开头\n3.url 分为三种类型：`CACHE`:为默认类型。`NETWORK`：表示资源从不缓存。 `FALLBACK`:每行包含两个 url，第二个 URL 是指需要加载和存储在缓存中的资源， 第一个 URL 是一个前缀。任何匹配该前缀的 URL 都不会缓存，如果从网络中载入这样的 URL 失败的话，就会用第二个 URL 指定的缓存资源来替代。"
+    },
+    {
+      "title": "客户端存储 localStorage 和 sessionStorage",
+      "ans": "- localStorage 有效期为永久，sessionStorage 有效期为顶层窗口关闭前\n- 同源文档可以读取并修改 localStorage 数据，sessionStorage 只允许同一个窗口下的文档访问，如通过 iframe 引入的同源文档。\n- Storage 对象通常被当做普通 javascript 对象使用：**通过设置属性来存取字符串值**，也可以通过**setItem(key, value)设置**，**getItem(key)读取**，**removeItem(key)删除**，**clear()删除所有数据**，**length 表示已存储的数据项数目**，**key(index)返回对应索引的 key**"
+    },
+    {
+      "title": "javascript 有哪些方法定义对象",
+      "ans": "1. 对象字面量： `var obj = {};`\n2. 构造函数： `var obj = new Object();\n3. Object.create(): `var obj = Object.create(Object.prototype);`"
     }
   ],
-  "js相关": [
+  "Vue相关": [
     {
-      "title": "我是真的爱你啊",
-      "ans": "看着爱情的浪漫，再也没有方向，忘记曾经许下的愿望，可是谁又了解时过境迁"
+      "title": "v-if 和 v-show 有什么区别？",
+      "ans": "v-show 仅仅控制元素的显示方式，将 display 属性在 block 和 none 来回切换；而v-if会控制这个 DOM 节点的存在与否。当我们需要经常切换某个元素的显示/隐藏时，使用v-show会更加节省性能上的开销；当只需要一次显示或隐藏时，使用v-if更加合理。"
     },
     {
-      "title": "除了自己",
-      "ans": "是你多么的目光"
+      "title": " 简述Vue2的响应式原理",
+      "ans": "当一个Vue实例创建时，vue会遍历data选项的属性，用 Object.defineProperty 将它们转为 getter/setter并且在内部追踪相关依赖，在属性被访问和修改时通知变化。\n每个组件实例都有相应的 watcher 程序实例，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新。"
+    },
+    {
+      "title": "计算属性computed适用的情形",
+      "ans": "我们可能会有这样的需求，一个数据属性在它所依赖的属性发生变化时，也要发生变化，这种情况下，我们最好使用计算属性。"
+    },
+    {
+      "title": "知道什么是vuex吗？",
+      "ans": "在SPA单页面组件的开发中 Vue的vuex和React的Redux 都统称为同一状态管理，个人的理解是全局状态管理更合适；简单的理解就是你在state中定义了一个数据之后，你可以在所在项目中的任何一个组件里进行获取、进行修改，并且你的修改可以得到全局的响应变更。"
+    },
+    {
+      "title": "vue2.0中的$router 和 $route的区别",
+      "ans": "将公用的JS库通过script标签外部引入，减小app.bundel的大小，让浏览器并行下载资源文件，提高下载速度；"
+    },
+    {
+      "title": "如何优化SPA应用的首屏加载速度慢的问题？",
+      "ans": "当一个Vue实例创建时，vue会遍历data选项的属性，用 Object.defineProperty 将它们转为 getter/setter并且在内部追踪相关依赖，在属性被访问和修改时通知变化。\n每个组件实例都有相应的 watcher 程序实例，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新。在配置 路由时，页面和组件使用懒加载的方式引入，进一步缩小 app.bundel 的体积，在调用某个组件时再加载对应的js文件.加一个首屏 loading 图，提升用户体验"
     }
   ]
 }

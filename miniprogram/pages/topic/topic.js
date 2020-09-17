@@ -73,7 +73,7 @@ Page({
         // this.setData({
         //     clicked: true
         // })
-        // console.log()
+        // // console.log()
         let idx = event.currentTarget.dataset.value
         let current = this.data.current;
         // current.choose[idx].clicked = true;
@@ -172,12 +172,12 @@ Page({
         //被收藏了 取消收藏
         else {
             // 被收藏肯定是有的
-            console.log(picked)
+            // console.log(picked)
             picked = JSON.parse(picked)
             let deleteIdx = -1;
             picked.picked.forEach((item, idx) => {
                 if (item.title === current.title) {
-                    console.log(idx)
+                    // console.log(idx)
                     deleteIdx = idx;
                     return;
                 }

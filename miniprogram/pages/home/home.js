@@ -20,7 +20,7 @@ Page({
     },
 
     navGo: (event) => {
-        console.log(event)
+        // console.log(event)
         wx.navigateTo({
             url: event.currentTarget.dataset.route,
         })
@@ -52,20 +52,21 @@ Page({
         let current = res.filter(item => {
             return item.collection === local_status
         })[0]
-        console.log(current)
+        // console.log(current)
         // 获取本地进度
         let status = wx.getStorageSync(local_status + "_progress");
         let progress = null;
         let currentCollection = current.collection;
         if (status) {
-            console.log("test")
+            // console.log("test")
             // 获取到就赋值给progress
             progress = JSON.parse(status);
 
         }
         else {
             // 没有本地记录，说明需要进行设置
-            console.log("fail to get")
+            // console.log("fail to get")
+            // console.log(current)
             progress = {
                 finished: 0,
                 lasted: current.length,
@@ -123,13 +124,13 @@ Page({
             let progress = null;
             let currentCollection = current.collection;
             if (status) {
-                console.log("test")
+                // console.log("test")
                 // 获取到就赋值给progress
                 progress = JSON.parse(status);
             }
             else {
                 // 没有本地记录，说明需要进行设置
-                console.log("fail to get")
+                // console.log("fail to get")
                 progress = {
                     finished: 0,
                     lasted: current.length,

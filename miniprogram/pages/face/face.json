@@ -2,5 +2,6 @@
   "usingComponents": {
     "icon-self":"../../components/icon-self/icon-self",
     "show-list":"../../components/showList/showList"
-  }
+  },
+  "navigationBarTitleText": "面试题"
 }

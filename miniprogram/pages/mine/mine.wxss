@@ -78,7 +78,10 @@
 }
 .home-menu-item button{
     padding: 0;
-    width: auto;
+    width: 200rpx;
+    background-color: #f5f5f5;
+    text-align: left;
+    /* float: left; */
     justify-content: center;
 }
 .contact-with-us {

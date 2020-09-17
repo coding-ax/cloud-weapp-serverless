@@ -14,7 +14,7 @@ Page({
         currentCollection: ""
     },
     radioChange: function (e) {
-        console.log(e)
+        // console.log(e)
         let current = this.data.radioItems.filter((item) => {
             return item.value === e.detail.value
         })
@@ -52,7 +52,7 @@ Page({
         })
         // 从数据库读取当前可用题库并设置
         let res = await db.collection("choose").get();
-        console.log(res.data)
+        // console.log(res.data)
         let temp = res.data.map((item, index) => {
             return {
                 _id: item._id,

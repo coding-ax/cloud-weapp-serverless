@@ -18,7 +18,7 @@ Page({
   },
 
   chooseTiku(e) {
-    console.log(e.currentTarget.dataset.value)
+    // console.log(e.currentTarget.dataset.value)
     // 获取参数（下标）
     let currentClick = e.currentTarget.dataset.value;
     let name = e.currentTarget.dataset.name;
@@ -49,8 +49,9 @@ Page({
       title: '加载中',
     });
     let currentTiku = this.data.currentTiku;
-    console.log(currentTiku)
+    // // console.log(currentTiku)
     let list = await db.collection(currentTiku).get()
+    // // console.log(list)
     list = list.data[0]
     // 处理请求到的数据，适应当前数据结构
     list = list.items.map((item, idx) => {
@@ -62,7 +63,7 @@ Page({
         ans: list[item].map(smallItem => { return smallItem.ans})
       }
     })
-    console.log(list)
+    // console.log(list)
     this.setData({
       list,
       choosed: true
@@ -86,13 +87,13 @@ Page({
       item['choosed'] = false;
       return item;
     })
-    console.log(tiku)
+    // console.log(tiku)
     this.setData({
       tiku
     })
     //从本地读取
     let collection = wx.getStorageSync('face_collection');
-    // console.log(collection)
+    // // console.log(collection)
     if (collection) {
       this.setData({
         currentTiku: collection
