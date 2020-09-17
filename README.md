@@ -234,3 +234,17 @@ changeShow() {
 
 在源代码根目录data文件夹下
 
+
+
+#### 五、相关开源协议
+
+本项目遵守MIT开源协议
+
+
+
+#### 六、 开发者
+
+WHUT-XGP Github个人主页：https://github.com/WHUT-XGP
+
+khannb Github个人主页： https://github.com/khannb
+
