@@ -234,7 +234,13 @@ changeShow() {
 
 在源代码根目录data文件夹下
 
+##### 4.3 视频预览链接
 
+https://v.qq.com/x/page/w3153lzeygq.html
+
+##### 4.4 微信平台文章地址
+
+https://developers.weixin.qq.com/community/develop/article/doc/0004ca1ea545f03180fa713e851413
 
 #### 五、相关开源协议
 
