@@ -230,6 +230,8 @@ changeShow() {
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200917164842418.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODMxMDI3,size_16,color_FFFFFF,t_70#pic_center)
 
+正式版本已经上线微信，请搜索关键字InterviewHub
+
 ##### 4.2 云开发数据集合
 
 在源代码根目录data文件夹下
